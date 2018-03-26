@@ -3,11 +3,11 @@ require 'nokogiri'
 require 'open-uri'
 require 'uri'
 
-printf("Please enter a food:\n")
+printf("Please enter a food: ")
 food = gets.chomp.downcase
 
 while food.empty?
-	printf("Please enter a food:\n")
+	printf("Please enter a food: ")
 	food = gets.chomp
 end
 
@@ -26,4 +26,4 @@ answer = foodPage.css("#page h2").text.downcase
 
 answer = answer.split("answer:")[1].lstrip.capitalize
 
-printf("%s\n", answer)
+printf("Can I give my dog %s? %s\n", food, answer)
